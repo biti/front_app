@@ -1,0 +1,8 @@
+<div class="file_combo">
+  <%= text_field_tag :_load, "", :placeholder => "Choose File", :readonly => true %>
+  <%= file_field_tag :load %>
+  <%= file_combo %>
+  <div>
+    <img src="<%= defined?(image) && image %>" />
+  </div>
+</div>

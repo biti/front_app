@@ -1,0 +1,16 @@
+<div class="major">
+  <h1>Sign In</h1>
+
+  <%= form_for(@operator, :url => { :action => 'sign_in' }) do |f| %>
+  <div class="field">
+    <%= f.text_field :username, :placeholder => '用户名' %>
+  </div>
+  <div class="field password">
+    <%= f.password_field :password, :placeholder => '密码' %>
+  </div>
+  <div class="action">
+    <%= f.submit :value => 'Sign In' %>
+  </div>
+  <% end %>
+  <div class="clear"></div>
+</div>

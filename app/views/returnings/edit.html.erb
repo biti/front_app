@@ -1,0 +1,20 @@
+<div class="returning">
+  <%= render :partial => "returning", :object => @returning %>
+</div>
+
+<%= form_for(@returning) do | f | %>
+<div class="field">
+  <%= f.label :deliverer %>
+  <%= f.text_field :deliverer %>
+</div>
+<div class="field">
+  <%= f.label :tracking_no %>
+  <%= f.text_field :tracking_no %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
+
+<%= link_to "Show", @returning %> |
+<%= link_to "Back", returnings_path %>

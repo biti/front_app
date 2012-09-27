@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ip: MyString
+  cdn: 1
+  region: 
+  client_key: MyString
+  session_id: MyString
+  subscriber: 
+  ref: MyString
+  url: MyString
+  source: 1
+  type: 1
+  content: MyString
+
+two:
+  ip: MyString
+  cdn: 1
+  region: 
+  client_key: MyString
+  session_id: MyString
+  subscriber: 
+  ref: MyString
+  url: MyString
+  source: 1
+  type: 1
+  content: MyString

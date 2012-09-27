@@ -1,0 +1,6 @@
+<div class="notification">
+  <h2><%= @notification.to.email %></h2>
+  <p><%= @notification.content[0,79] + (@notification.content.length > 80 ? "..." : "") %></p>
+  <h5><%= %w{NEW READ STASHED}[@notification.state] %></h5>
+</div>
+<%= link_to "Back", admin_notifications_path %>

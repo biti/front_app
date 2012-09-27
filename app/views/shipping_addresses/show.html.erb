@@ -1,0 +1,21 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<dl>
+  <dt>Receiver</dt>
+  <dd><%= @shipping_address.receiver %></dd>
+  <dt>Address</dt>
+  <dd><%= @shipping_address.address %></dd>
+  <dt>Mobile</dt>
+  <dd><%= @shipping_address.mobile || 'N/A' %></dd>
+  <dt>Tel</dt>
+  <dd><%= @shipping_address.tel || 'N/A' %></dd>
+  <dt>Email</dt>
+  <dd><%= @shipping_address.email || 'N/A' %></dd>
+  <dt>Zip</dt>
+  <dd><%= @shipping_address.zip || 'N/A' %></dd>
+</dl>
+
+<%= link_to 'Edit', edit_shipping_address_path(@shipping_address) %> |
+<%= link_to 'Back', shipping_addresses_path %>

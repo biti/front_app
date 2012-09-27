@@ -1,0 +1,9 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h2><%= @admin_announcement.title %></h2>
+<p><%= @admin_announcement.content %></p>
+
+<%= link_to 'Edit', edit_admin_announcement_path(@admin_announcement) %> |
+<%= link_to 'Back', admin_announcements_path %>

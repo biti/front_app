@@ -1,0 +1,20 @@
+<h1>Shipping Addresses</h1>
+<ul>
+  <% @shipping_addresses.each do |shipping_address| %>
+  <li class="address">
+    <h5><%= shipping_address.receiver %></h5>
+    <div class="detail">
+      <p><%= shipping_address.address %></p>
+      <ul>
+	<li><%= link_to 'Show', shipping_address %></li>
+	<li><%= link_to 'Edit', edit_shipping_address_path(shipping_address) %></li>
+	<li><%= link_to 'Destroy', shipping_address, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    </div>
+  </li>
+  <% end %>
+</ul>
+
+<br />
+
+<%= link_to 'New Shipping address', new_shipping_address_path %>

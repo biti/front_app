@@ -1,0 +1,26 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<div class="complaint">
+<h2><%= link_to @complaint.product.name, @complaint.product %></h2>
+<p class="content"><%= @complaint.content %></p>
+<p class="remark"><%= @complaint.remark %></p>
+<% if @complaint.accepted_at %>
+<h5>
+  <b>Accepted at:</b>
+  <%= @complaint.accepted_at %>
+</h5>
+<% end %>
+<% if @complaint.finished_at %>
+<h5>
+  <b>Finished at:</b>
+  <%= @complaint.finished_at %>
+</h5>
+<% end %>
+</div>
+
+<% if @complaint.accepted_at.nil? %>
+<%= link_to 'Edit', edit_complaint_path(@complaint) %> |
+<% end %>
+<%= link_to 'Back', complaints_path %>

@@ -1,0 +1,44 @@
+
+
+<div id='cart-container' style='width:980px;margin: 0px auto;color:black;'>
+  <span style='font-size:30px;'>
+    确认订单
+  </span>
+  
+  <% unless @cart_datas.empty? %>
+    <%= form_tag('/shopping/save_order', :id => 'order-form') do %>  
+  
+      <div class='shopping_xuan'>
+        <div class='shopxuan1'>
+          <a>1.查看购物车</a>
+          <a>2.填写核对信息单</a>
+          <a>3.成功提交订单</a>
+        </div>
+      </div>
+
+      <%= render 'address' %>
+  
+      <%= render 'order_items' %>
+    
+    	<input id='order-form-submit' type='button' value='提交订单' style='float:right;background-color: #FE9C44;font-size: 16px;font-weight: 700;height: 35px;width: 125px;'/>
+    <% end %>
+  
+  <% else %>
+    <br/>
+    <span style='font-size:14px;'>
+      您还没有选择商品,
+      <%= link_to '去首页挑选您喜欢的商品', root_path, :style => 'color:blue;' %>
+    </span>
+  <% end %>
+</div>
+
+<br/><br/>
+
+
+<script>
+  jQuery(function($) {
+    $('#order-form-submit').click(function() {
+      $('#order-form').submit();
+    });    
+  });
+</script>

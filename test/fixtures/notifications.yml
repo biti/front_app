@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  to: 1
+  type: 1
+  content: MyString
+  state: 1
+  marked_at: 2012-09-03 13:53:35
+
+two:
+  to: 1
+  type: 1
+  content: MyString
+  state: 1
+  marked_at: 2012-09-03 13:53:35

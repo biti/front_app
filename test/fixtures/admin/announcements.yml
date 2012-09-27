@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: The Silent Void
+  content: "Thus spake the master programmer: ``When you have learned to snatch the error code from the trap frame, it will be time for you to leave.''"
+
+two:
+  title: Design
+  content: "Thus spake the master programmer: ``When the program is being tested, it is too late to make design changes.''"

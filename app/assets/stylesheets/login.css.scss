@@ -1,0 +1,100 @@
+// Place all the styles related to the login controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.front.login {
+    a {
+	margin-left: 5px;
+	color: white;
+    }
+
+    .major {
+	background: #a40000;
+	width: 460px;
+	padding-bottom: 5px;
+	margin: 72px auto 0;
+	font-family: "Microsoft Yahei";
+	color: white;
+	position: relative;
+
+	.head {
+	    height: 85px;
+	    background: url("login_dot_sep.jpg") repeat-x bottom;
+	}
+
+	.brand {
+	    width: 243px;
+	    height: 62px;
+	    background: url("brand.jpg") no-repeat;
+	    position: absolute;
+	    top: 12px;
+	    left: 20px;
+	}
+
+	.words {
+	    width: 301px;
+	    height: 103px;
+	    background: url("words.jpg") no-repeat;
+	    margin: 0 auto;
+	}
+
+	form {
+	    width: 426px;
+	    margin: 0 auto;
+	}
+
+	input {
+	    border: none;
+	}
+
+	.field input {
+	    width: 406px;
+	    height: 50px;
+	    background: url("login_input.jpg") no-repeat;
+	    margin: 3px 0;
+	    padding: 0 10px;
+	    vertical-align: center;
+	    font-size: 20px;
+	    color: #999;
+	}
+
+	.action input {
+	    float: right;
+	    margin: 5px;
+	}
+    }
+}
+
+.front.sign_up .action input {
+    width: 89px;
+    height: 32px;
+    background: url("bn_sign_up.jpg") no-repeat top;
+}
+
+.front.sign_up .stage2 .action input {
+    background: url("bn_sign_up.jpg") no-repeat bottom;
+}
+
+.front.sign_in .action input {
+    background: url("bn_sign_in.jpg") no-repeat;
+    width: 90px;
+    height: 33px;
+}
+
+.front.initiate_reset_password,
+.front.deliver_reset_password,
+.front.reset_password {
+    padding: 10px 15px;
+
+    input {
+	display: block;
+	padding: 5px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	margin: 5px 0;
+    }
+
+    input[type=text] {
+	width: 180px;
+    }
+}

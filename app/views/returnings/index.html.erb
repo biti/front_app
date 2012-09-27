@@ -1,0 +1,13 @@
+<% if @returnings.empty? %>
+<p>No returning.</p>
+<% else %>
+<ul>
+  <% @returnings.each do | returning | %>
+  <li class="returning">
+    <%= render :partial => "returning", :object => returning %>
+  </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>
+<% end %>

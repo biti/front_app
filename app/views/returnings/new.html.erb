@@ -1,0 +1,32 @@
+<% if @returning.product.nil? %>
+<p>No product.</p>
+<% else %>
+<%= form_for(@returning) do |f| %>
+<% if @returning.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@returning.errors.count, "error") %> prohibited this shipping_address from being saved:</h2>
+
+  <ul>
+    <% @returning.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<h2><%= link_to @returning.product.name, @returning.product %></h2>
+<%= hidden_field_tag :product, @returning.product.id %>
+<div class="field">
+  <%= f.label :cause %>
+  <%= f.text_area :cause %>
+</div>
+<div class="field quantity">
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity %>
+</div>
+<div class="clear"></div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
+<% end %>

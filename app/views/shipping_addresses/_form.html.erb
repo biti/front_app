@@ -1,0 +1,52 @@
+<%= form_for(@shipping_address) do |f| %>
+<% if @shipping_address.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@shipping_address.errors.count, "error") %> prohibited this shipping_address from being saved:</h2>
+
+  <ul>
+    <% @shipping_address.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :receiver %>
+  <%= f.text_field :receiver %>
+</div>
+<div class="field region">
+  <%= f.label :region %>
+  <div>
+    <% provincial = settle(@shipping_address.region, 1)
+       city = settle(@shipping_address.region, 2)
+       district = settle(@shipping_address.region, 3) %>
+    <%= select_tag :provincial, options_from_collection_for_select(Region.where(:level => 1), :id, :title, provincial && provincial.id), :include_blank => true %>
+    <%= select_tag :city, options_from_collection_for_select(provincial && provincial.children || [], :id, :title, city && city.id), :include_blank => true %>
+    <%= select_tag :district, options_from_collection_for_select(city && city.children || [], :id, :title, district && district.id), :include_blank => true %>
+  </div>
+</div>
+<div class="field">
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+</div>
+<div class="field">
+  <%= f.label :mobile %>
+  <%= f.text_field :mobile %>
+</div>
+<div class="field">
+  <%= f.label :tel %>
+  <%= f.text_field :tel %>
+</div>
+<div class="field">
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+</div>
+<div class="field">
+  <%= f.label :zip %>
+  <%= f.text_field :zip %>
+</div>
+<div class="actions">
+  <%= f.submit :value => 'Save' %>
+</div>
+<% end %>

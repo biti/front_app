@@ -1,0 +1,13 @@
+<div class="returning">
+<%= render :partial => "returning", :object => @returning %>
+</div>
+
+<%= form_for(@returning, :url => { :action => "do_solve" }) do | f | %>
+<div class="field">
+  <%= f.label :remark %>
+  <%= f.text_area :remark %>
+</div>
+<div class="action">
+  <%= f.submit %>
+</div>
+<% end %>

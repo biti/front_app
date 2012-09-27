@@ -1,0 +1,41 @@
+<% if @report.product.nil? %>
+<p>No product.</p>
+<% else %>
+<div class="product">
+  <%= render :partial => "bookmarks/product", :object => @report.product %>
+</div>
+<%= form_for(@report) do |f| %>
+  <% if @report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+
+      <ul>
+      <% @report.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= hidden_field_tag :product, @report.product.id %>
+  <div class="field">
+    <%= f.label :retailer %><br />
+    <%= f.text_field :retailer %>
+  </div>
+  <div class="field">
+    <%= f.label :load %><br />
+    <%= render :partial => "resources/file_combo", :object => (f.hidden_field :receipt_photo), :locals => { :image => (@report.receipt_photo && resource_url(@report.receipt_photo)) } %>
+  </div>
+  <div class="field">
+    <%= f.label :receipt_price %><br />
+    <%= f.text_field :receipt_price %>
+  </div>
+  <div class="field">
+    <%= f.label :receipt_date %><br />
+    <%= f.date_select :receipt_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<% end %>

@@ -1,0 +1,10 @@
+<ul>
+  <% @announcements.each do | announcement | %>
+  <li>
+    <h2><a href="<%= announcement_path announcement %>"><%= announcement.title %></a></h2>
+    <p><%= announcement.content[0,79] + (announcement.content.length > 80 && "..." || "") %></p>
+    <h5><%= announcement.created_at %></h5>
+  </li>
+  <% end %>
+</ul>
+<%= will_paginate @announcements %>

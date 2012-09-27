@@ -1,0 +1,69 @@
+<%= javascript_include_tag "application" %>
+
+<%= form_for(@shipping_address, 
+  :url => "/shopping/update_address?id=#{@shipping_address.id}") do |f| %>
+  
+  <div id="error_explanation">
+  </div>
+
+
+  <div class="actions">
+    <div class="field">
+      <%= f.label '收件人' %>
+      <%= f.text_field :receiver %>
+    </div>
+    <div class="field region">
+      <%= f.label '省市区' %>
+    	<% provincial = settle(@shipping_address.region, 1)
+    	   city = settle(@shipping_address.region, 2)
+    	   district = settle(@shipping_address.region, 3) %>
+    	<%= select_tag :provincial, options_from_collection_for_select(Region.where(:level => 1), :id, :title, provincial && provincial.id), :include_blank => true %>
+    	<%= select_tag :city, options_from_collection_for_select(provincial && provincial.children || [], :id, :title, city && city.id), :include_blank => true %>
+    	<%= select_tag :district, options_from_collection_for_select(city && city.children || [], :id, :title, district && district.id), :include_blank => true %>
+    </div>
+
+    <div class="field">
+      <%= f.label '详细地址' %>
+      <%= f.text_field :address %>
+    </div>
+    <div class="field">
+      <%= f.label '手机' %>
+      <%= f.text_field :mobile %>
+    </div>
+    <div class="field">
+      <%= f.label '座机' %>
+      <%= f.text_field :tel %>
+    </div>
+    <div class="field">
+      <%= f.label '电子邮箱' %>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label '邮编' %>
+      <%= f.text_field :zip %>
+    </div>
+    
+    <input type='button' value='保存' id='submit-button'/>
+  </div>
+<% end %>
+
+<%= hidden_field_tag '-path', root_url %>
+
+<script>
+  jQuery(function($) {
+    $('#submit-button').click(function() {
+      var form = $('form');
+      $.post(form.attr('action'), form.serialize())
+      .success(function(resp) {
+
+        if(resp.result === 'error') {
+          $('#error_explanation').html(resp.message);
+        }else {
+          parent.tb_remove();
+          parent.$('#address-label-<%=@shipping_address.id%>').html(resp);
+        }
+      });
+
+    });
+  });
+</script>

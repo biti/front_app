@@ -1,0 +1,55 @@
+// Place all the styles related to the admin::complaints controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin.complaints {
+    .major {
+	.complaint {
+	    width: 750px;
+	    padding: 10px;
+
+	    h2 {
+		font-size: 120%;
+		font-weight: bold;
+	    }
+
+	    p.content {
+		margin: 5px;
+		line-height: 150%;
+	    }
+
+	    p.remark {
+		margin: 5px 5px 5px 15px;
+		padding: 5px;
+		border-radius: 5px;
+		background: lightcyan;
+	    }
+
+	    h5 {
+		margin-left: 5px;
+	    }
+
+	    .actions {
+		float: right;
+	    }
+	}
+    }
+}
+
+.admin.complaints.edit {
+    .major {
+	.complaint {
+	    input, textarea {
+		display: block;
+		padding: 5px;
+		border: 1px solid #333;
+		border-radius: 5px;
+		margin: 5px 0;
+	    }
+
+	    .actions {
+		float: none;
+	    }
+	}
+    }
+}

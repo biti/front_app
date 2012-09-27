@@ -1,0 +1,13 @@
+<div class="returning">
+<%= render :partial => "returning", :object => @returning %>
+</div>
+
+<%= form_for(@returning, :url => { :action => "do_accept" }) do | f | %>
+<div class="field">
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+</div>
+<div class="action">
+  <%= f.submit %>
+</div>
+<% end %>

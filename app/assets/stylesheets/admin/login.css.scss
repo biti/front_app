@@ -1,0 +1,46 @@
+// Place all the styles related to the Admin::login controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.admin.sign_in {
+
+    background: url("../invt_background.jpg") no-repeat fixed 100% 100%;
+    background-size: cover;
+    width: 100%;
+    padding: 0;
+    font-family: "Microsoft Yahei";
+
+    .major {
+	background: rgba(0, 0, 0, 0.85);
+	width: 240px;
+	height: 480px;
+	padding: 40px;
+	margin-left: 20%;
+
+	h1 {
+	    font-family: "Palatino Linotype", sans-serif;
+	    font-size: 36pt;
+	    font-weight: bold;
+	    color: wheat;
+	}
+
+	input {
+	    padding: 5px;
+	    border: 1px solid #999;
+	    border-radius: 5px;
+	    margin: 15px 0;
+	}
+
+	input[type=text],
+	input[type=password] {
+	    width: 230px;
+	}
+
+	input[type=submit] {
+	    background: #39f;
+	    font-family: verdana;
+	    font-weight: bold;
+	    color: white;
+	}
+    }
+}

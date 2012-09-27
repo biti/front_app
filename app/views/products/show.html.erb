@@ -1,0 +1,170 @@
+
+<div class="clr"></div>
+<div class="cpgm">
+  <div class="biaotdk"><%= @product.name %><span class="kc"></span></div>
+  <div class="fl tpdfsdf">
+    <!-- <img src=<%= @product.image1.url %> width="439" height="364" /> -->
+    <%= render 'images' %>
+  </div>
+  <div class="fr jjjjk">
+
+    <div class="shicjge">
+      市场价：<span>￥<%= @product.market_price%></span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      商品编号：      <%= @product.custom_id%> 
+      <%= link_to "收藏", bookmarks_path(:product => @product.id), :method => :post, :target => :_blank %>
+    </div>
+
+    <div class="modengjia">摩登价：<span>￥<%= @product.price %></span></div>
+    <div class="kc">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="13%">库存 </td>
+
+          <td width="18%"><div class="xh"><%= @product.num %>件</div></td>
+          <td width="69%"><em>销量：<%= @product.sell_num %>件</em></td>
+        </tr>
+      </table>
+    </div>
+    <div class="shangppj">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="12%" height="36">商品评价：</td>
+          <td width="19%"><img src="/images/sjym_14.jpg" width="88" height="18" /></td>
+          <td width="69%">（已有1000条评价）</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 选择sku控件 -->
+    <div class="guig-out">
+      <div class="guig-box clearfix">
+        <p class="gg-note-title">
+          请选择颜色尺码
+          <b class="to-close"><%= image_tag "sku_selector/btn-close.gif"%></b>
+        </p>
+
+        <div id='select-standards'></div>
+
+        <div class='gg-confirm'>
+          <span id='gg-confirm-price'></span>
+          <a id='gg-confirm-btn' href='javascript:;'>
+            <%= image_tag "sku_selector/btn-comfirm.gif"%>
+          </a>
+        </div>
+
+        <div class="c"></div>
+      </div>
+    </div>
+    <!-- 选择sku控件结束 -->
+
+    <!-- <div class="gmsl">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="12%">购买数量：</td>
+          <td width="88%" valign="middle">
+            <table width="72" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><a href="#"><img src="/images/sjym_22.jpg" width="16" height="18" /></a></td>
+                <td><a href="#" class="sz">1</a></td>
+                <td><a href="#"><img src="/images/sjym_22.jpg" width="16" height="18" /></a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div> -->
+    
+    <div class="gouwuc"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="44%">
+            <a href='javascript:;' id='add-to-cart-button'>
+              <img src="/images/sjym_26.jpg" width="159" height="31" />
+            </a>
+          </td>
+          <td width="56%">
+            <a href='javascript:;' id='order-button'>
+              <img src="/images/sjym_29.jpg" width="89" height="31" />
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+  </div>
+  <div class="clr"></div>
+</div>
+<div class="clr"></div>
+<div class="zhongbne">
+  <div class="fl tijjj">
+    <div class="btknt">其他产品推荐</div>
+    <div class="clr"></div>
+    <div class="kdngt">
+      <ul>
+        <% @related_products.each do |p| %>
+          <li>
+          <div class="neigc"><%= image_tag p.image1, size: "186x278" %></div>
+          <div class="awenz">
+            <span>￥<%= p.price %></span>已销售<%= p.sell_num %>件
+          </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="fr jjsk">
+    
+    <div class="shihrq">
+      在本店买多款优惠：<br/><br/>
+      <% @related_products.each do |p| %>
+        <%= link_to product_path(p) do %>
+          <%= image_tag p.image1, size: "80x80" %>
+        <% end %>
+      <% end %>
+      <br/><br/>
+      
+      <%= raw @product.content.description %>
+    </div>
+    <div class="ljpjd">累计评价（11338） </div>
+
+    <div id="reviews" class="J_DetailSection">
+      
+    <div class="clr"></div>
+  </div>
+</div>
+
+
+<div class="clr"></div>
+
+
+<script>
+  $(document).ready(function() {    
+    FrontApp.Home.Product.init();
+    
+    var skus = <%= raw @skus_json %>;
+    var properties = <%= raw @properties_json %>;
+    
+    var options = {
+      'productId': 1,
+      'minQuantity': 1,
+      'maxQuantity': 100,
+
+      'skus':       skus,
+      'properties': properties,
+
+      'showPriceElementId': 'show-price',               // 价格元素id
+      'confirmPriceElementId': 'gg-confirm-price',      // 确认规格价格元素id
+      'showMarketPriceElementId': 'show-market-price',  // 市场价元素id
+      'showSavingsElementId': 'show-savings',           // 节省金额元素id
+      'showDiscountElementId': 'show-discount',         // 折扣元素id
+      'showStockElementId': 'show-stock',               // 库存元素id
+      
+      'addToCartButtonId': 'add-to-cart-button',        // 添加购物车button
+      'orderButtonId': 'order-button',                  // 直接下单button
+      'quantityInput': 'quantity-input',                // 购买数量元素id
+      'partnerSelectId':  'partner-select',             // 分店选择select id
+      'standardSelectsClass':  'standard-selects'       // 规格选择select class
+    };
+
+    var selector = jQuery('#select-standards').skuSelector(options);
+  });
+</script>

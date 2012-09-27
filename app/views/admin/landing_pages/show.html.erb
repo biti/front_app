@@ -1,0 +1,16 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<ul>
+  <li class="page">
+    <%= image_tag resource_url(@landing_page.background_image), class: "thumbnail" %>
+    <div class="actions">
+      <h5><%= @landing_page.domain %></h5>
+      <ul>
+	<li><%= link_to 'Edit', edit_admin_landing_page_path(@landing_page) %></li>
+	<li><%= link_to 'Back', admin_landing_pages_path %></li>
+      </ul>
+    </div>
+  </li>
+</dl>

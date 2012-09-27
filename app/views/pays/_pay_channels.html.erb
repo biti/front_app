@@ -1,0 +1,20 @@
+
+
+<span style='font-size:18px;'>使用网银支付：</span><br/>
+
+<% PAYMENT_CHANNEL[:tenpay][:banks].each do |bank| %>
+  <%= bank_pay_button '#tenpay-form', "#bank_type", bank %>
+<% end %>
+
+<br/><br/>
+<span style='font-size:18px;'>使用支付平台支付：</span><br/>
+
+<%= link_to 'javascript:;', :class => 'pay-channel',
+    :onclick => "$('#alipay-form > div').remove();$('#alipay-form').submit()" do %>
+  <%= image_tag 'pay/alipay.png' %>
+<% end %>
+
+<%= link_to 'javascript:;', :class => 'pay-channel',
+    :onclick => "$('#bank_type').val('0');$('#tenpay-form > div').remove();$('#tenpay-form').submit()" do %>
+  <%= image_tag 'pay/tenpay.png' %>
+<% end %>

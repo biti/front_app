@@ -1,0 +1,24 @@
+<div class="product">
+  <div class="report">
+    <span class="subscriber"><%= @report.subscriber.email %></span>
+    <span class="retailer"><%= @report.retailer %></span>
+    <span class="receipt_date"><%= @report.receipt_date %></span>
+    <span class="receipt_price">￥<%= @report.receipt_price %></span>
+    <span class="price">￥<%= @report.price %></span>
+    <h5><%= @report.finished_at && format("%s [SOLVED]", @report.finished_at) ||
+	    @report.accepted_at && format("%s [ACCEPTED]", @report.accepted_at) %></h5>
+  </div>
+  <div class="actions">
+    <%= link_to 'Show', admin_report_path(@report) %>
+    <% unless @report.finished_at %>
+    <% unless @report.accepted_at %>
+    <%= link_to 'Accept', admin_accept_report_path(@report), method: :put, data: { confirm: 'Are you sure?' } %>
+    <% else %>
+    <%= link_to 'Finish', admin_finish_report_path(@report), method: :put, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <% end %>
+  </div>
+  <img class="receipt" src="<%= resource_url @report.receipt_photo %>" />
+</div>
+
+<%= link_to 'Back', admin_reports_path %>

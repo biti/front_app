@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subscriber_id: 1
+  # order: 
+  product_id: 1
+  quantity: 1
+  cause: MyString
+  settled_at:
+  settle:
+  remark:
+  accepted_at:
+  amount:
+  delivered_at:
+  deliverer:
+  tracking_no:
+
+# two:
+#   subscriber: 
+#   order: 
+#   product: 
+#   quantity: 1
+#   cause: MyString
+#   settled_at: 2012-09-06 14:19:59
+#   settle: 1
+#   remark: MyString
+#   accepted_at: 2012-09-06 14:19:59
+#   amount: 9.99
+#   delivered_at: 2012-09-06 14:19:59
+#   deliverer: MyString
+#   tracking_no: MyString

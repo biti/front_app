@@ -1,0 +1,469 @@
+// Place all the styles related to the subscribers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.subscribers.home .minor li.home,
+.subscribers.edit .minor li.profile,
+.subscribers.initiate_authorizing_email .minor li.profile,
+.subscribers.password .minor li.password,
+.subscribers.payment_password .minor li.payment_password,
+.subscribers.invite .minor li.invite,
+.shipping_addresses .minor li.shipping_addresses,
+.orders .minor li.orders,
+.returnings .minor li.returnings,
+.bookmarks .minor li.bookmarks,
+.reviews .minor li.reviews,
+.complaints .minor li.complaints,
+.reports .minor li.reports,
+.announcements .minor li.announcements,
+.notifications .minor li.notifications {
+    background: black;
+    a {
+	color: orange;
+    }
+}
+
+.subscribers.home,
+.subscribers.edit,
+.subscribers.initiate_authorizing_email,
+.subscribers.password,
+.subscribers.payment_password,
+.front.returnings,
+.front.shipping_addresses,
+.front.orders,
+.front.bookmarks,
+.front.reviews,
+.front.complaints,
+.front.reports,
+.front.announcements,
+.front.notifications {
+
+    padding: 45px 0;
+
+    .minor {
+	float: left;
+	width: 120px;
+	padding: 0 35px;
+	text-align: right;
+
+	li {
+	    padding: 5px;
+	}
+    }
+
+    .major {
+	float: left;
+
+	h1 {
+	    font-size: 28pt;
+	}
+
+	.announcement {
+	    width: 600px;
+	}
+
+	input, select, textarea {
+	    display: block;
+	    border: 1px solid #333;
+	    border-radius: 5px;
+	    padding: 5px;
+	    margin: 10px 0;
+	    font-size: 12pt;
+	}
+
+	input:hover {
+	    background: #333;
+	    color: white;
+	}
+
+	.field_with_errors label {
+	    font-weight: bold;
+	}
+
+	input[type=text],
+	input[type=password],
+	textarea {
+	    width: 360px;
+	}
+
+	select {
+	    display: inline;
+	    width: 120px;
+	}
+
+	input[type=submit] {
+	    padding: 5px 15px;
+	}
+
+	input[readonly=true] {
+	    background: #f0f0f0;
+	    text-shadow: 0 1px 1px #999;
+	}
+
+	input[readonly=true]:hover {
+	    background: #333;
+	    color: white;
+	}
+    }
+
+}
+
+.front.subscribers.finish_authorizing_email {
+    p {
+	margin: 5px 15px;
+    }
+}
+
+.front.subscribers.edit {
+    h2 {
+	font-size: 120%;
+	font-weight: bold;
+	margin-bottom: 15px;
+
+	a {
+	    margin-left: 15px;
+	    font-size: 75%;
+	    font-weight: normal;
+	}
+    }
+}
+
+.front.returnings {
+    .returning {
+	margin-bottom: 15px;
+	padding: 10px 10px 10px 20px;
+	width: 750px;
+	border-bottom: 1px dashed #ccc;
+	position: relative;
+
+	h2 {
+	    font-size: 120%;
+	    margin-left: -10px;
+	}
+
+	.amount {
+	    font-size: 120%;
+	    color: red;
+	}
+
+	.cause {
+	    margin: 5px 0;
+	    color: #555;
+	}
+
+	.remark {
+	    padding: 5px;
+	    border-radius: 5px;
+	    background: lightcyan;
+	}
+
+	.actions {
+	    position: absolute;
+	    top: 15px;
+	    right: 15px;
+
+	    a {
+		margin-right: 5px;
+	    }
+	}
+    }
+}
+
+.front.returnings.show {
+    .returning .actions .show {
+	display: none;
+    }
+}
+
+.front.returnings.new,
+.front.returnings.create {
+    h2 {
+	font-size: 120%;
+    }
+
+    .field.quantity {
+	float: right;
+
+	#returning_quantity {
+	    display: inline;
+	    width: 50px;
+	    vertical-align: middle;
+	    text-align: right;
+	}
+    }
+}
+
+.front.bookmarks,
+.front.reviews,
+.front.reports {
+    .product {
+	width: 750px;
+	padding: 10px;
+	position: relative;
+
+	.image {
+	    float: left;
+	    width: 160px;
+	    text-align: center;
+
+	    img {
+		max-width: 150px;
+		max-height: 150px;
+	    }
+	}
+
+	.brief {
+	    float: left;
+	    width: 600px;
+	    padding: 10px;
+
+	    h2 {
+		font-size: 180%;
+	    }
+
+	    .price {
+		font-size: 150%;
+		font-weight: bold;
+		color: red;
+	    }
+	}
+
+	.actions {
+	    position: absolute;
+	    bottom: 15px;
+	    right: 15px;
+	}
+    }
+
+    li.product:hover {
+	background: lightyellow;
+    }
+
+    .report {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	text-align: right;
+
+	.retailer {
+	    font-size: 120%;
+	    font-weight: bold;
+	}
+
+	.receipt_price {
+	    display: block;
+	    color: red;
+	    font-size: 150%;
+	}
+
+	.price {
+	    text-decoration: line-through;
+	}
+    }
+
+    img.receipt {
+	width: 750px;
+    }
+}
+
+.front.reviews .major {
+    .field.rank {
+	label: {
+	    margin-right: 5px;
+	}
+
+	input[type=radio] {
+	    display: inline;
+	    vertical-align: middle;
+	}
+    }
+
+    .review {
+	padding: 10px 10px 15px 180px;
+
+	h2 {
+	    font-size: 120%;
+
+	    span {
+		margin-left: 10px;
+		font-size: 90%;
+		font-weight: bold;
+		color: green;
+	    }
+	}
+
+	p {
+	    padding: 5px;
+	    color: #555;
+	}
+    }
+
+    li .review {
+	padding-bottom: 35px;
+	position: relative;
+
+	.actions {
+	    position: absolute;
+	    right: 15px;
+	    bottom: 15px;
+	}
+    }
+
+    li:hover {
+	background: lightyellow;
+    }
+}
+
+.front.complaints .major {
+    .complaint {
+	width: 750px;
+	paddiing: 10px;
+
+	h2 {
+	    font-size: 150%;
+	    font-weight: bold;
+	}
+
+	p.content {
+	    margin: 5px;
+	    line-height: 150%;
+	}
+
+	p.remark {
+	    margin: 5px 5px 5px 15px;
+	    padding: 5px;
+	    border-radius: 5px;
+	    background: lightcyan;
+	}
+
+	h5 {
+	    margin-left: 5px;
+	}
+
+	.actions {
+	    float: right;
+	}
+    }
+}
+
+.front.announcements {
+    .major {
+	h2 {
+	    font-size: 120%;
+	    font-weight: bold;
+	    margin: 5px 0;
+	}
+
+	p {
+	    margin: 5px 0;
+	}
+
+	h5 {
+	    text-align: right;
+	    margin: 5px;
+	    font-size: 90%;
+	}
+
+	li {
+	    width: 720px;
+	    padding: 5px;
+	}
+
+	li:hover {
+	    background: lightyellow;
+	}
+    }
+}
+
+.subscribers.invite {
+    background: url("invt_background.jpg") no-repeat fixed 100% 100%;
+    background-size: cover;
+    width: 100%;
+
+    .major {
+	width: 951px;
+	margin: 79px auto 0;
+	background: url("invt_pattern.jpg") repeat-y center;
+	padding-bottom: 10px;
+
+	.left {
+	    width: 577px;
+	    float: left;
+
+	    .prologue {
+		height: 151px;
+		border-bottom: 1px solid #bc4040;
+		background: url("invt_prologue.jpg") no-repeat 20px center;
+	    }
+
+	    input {
+		border: none;
+	    }
+
+	    input[type=text] {
+		width: 406px;
+		height: 50px;
+		background: url("login_input.jpg") no-repeat;
+		margin-bottom: 14px;
+		padding: 0 10px;
+		vertical-align: center;
+		font-size: 20px;
+		color: #999;
+	    }
+
+	    .email {
+		padding: 46px 0 13px 20px;
+		background: url("invt_by_email.jpg") no-repeat 20px 24px;
+		border-bottom: 1px solid #bc4040;
+
+		input[type=submit] {
+		    width: 88px;
+		    height: 33px;
+		    background: url("bn_invite.jpg") no-repeat;
+		}
+	    }
+
+	    .link {
+		padding: 50px 0 26px 20px;
+		background: url("invt_by_linkage.jpg") no-repeat 20px 27px;
+	    }
+
+	    .invt_check {
+		display: block;
+		width: 197px;
+		height: 35px;
+		background: url("invt_check.jpg") no-repeat;
+		margin-left: 20px;
+	    }
+	}
+
+	.right {
+	    width: 373px;
+	    float: right;
+
+	    ul {
+		padding: 66px 0 32px;
+
+		.bonus_1 {
+		    height: 98px;
+		    background: url("invt_bonus_1.jpg") no-repeat center center;
+		}
+
+		.bonus_2 {
+		    height: 96px;
+		    background: url("invt_bonus_2.jpg") no-repeat center center;
+		}
+
+		.bonus_3 {
+		    height: 96px;
+		    background: url("invt_bonus_3.jpg") no-repeat center center;
+		}
+
+		.bonus_4 {
+		    height: 96px;
+		    background: url("invt_bonus_4.jpg") no-repeat center center;
+		}
+	    }
+	}
+    }
+}

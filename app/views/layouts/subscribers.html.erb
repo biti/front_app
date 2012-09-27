@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fair</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="front <%= controller.controller_name %> <%= controller.action_name %>">
+
+  <div class="minor">
+    <ul>
+      <li class="home">
+	<a href="<%= home_path %>">Home</a>
+      </li>
+      <li class="profile">
+	<a href="<%= profile_path %>">Profile</a>
+      </li>
+      <li class="password">
+	<a href="<%= password_path %>">Password</a>
+      </li>
+      <li class="payment_password">
+	<a href="<%= payment_password_path %>">Payment Password</a>
+      </li>
+      <li class="invite">
+	<a href="<%= invite_path %>">Invite</a>
+      </li>
+      <li class="shipping_addresses">
+	<a href="<%= shipping_addresses_path %>">Shipping Addresses</a>
+      </li>
+      <li class="returnings">
+	<a href="<%= returnings_path %>">Returnings</a>
+      </li>
+      <li class="bookmarks">
+	<a href="<%= bookmarks_path %>">Bookmarks</a>
+      </li>
+      <li class="reviews">
+	<a href="<%= reviews_path %>">Reviews</a>
+      </li>
+      <li class="complaints">
+	<a href="<%= complaints_path %>">Complaints</a>
+      </li>
+      <li class="reports">
+	<a href="<%= reports_path %>">Reports</a>
+      </li>
+      <li class="announcements">
+	<a href="<%= announcements_path %>">Announcements</a>
+      </li>
+      <li class="notifications">
+	<a href="<%= notifications_path %>">Notifications</a>
+      </li>
+      <li class="orders">
+        <a href="<%= orders_path %>">我的订单</a>
+      </li>
+    </ul>
+  </div>
+  <div class="major">
+    <%= yield %>
+  </div>
+
+  <%= hidden_field_tag '-path', root_url %>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fair</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="admin <%= controller.controller_name %> <%= controller.action_name %>">
+
+  <div class="minor">
+    <dl>
+      <dt class="landing_pages"><a href="<%= admin_landing_pages_path %>">Landing Pages</a></dt>
+      <dt class="returnings"><a href="<%= admin_returnings_path %>">Returnings</a></dt>
+      <dt class="complaints"><a href="<%= admin_complaints_path %>">Complaints</a></dt>
+      <dt class="reports"><a href="<%= admin_reports_path %>">Reports</a></dt>
+      <dt class="announcements"><a href="<%= admin_announcements_path %>">Announcements</a></dt>
+      <dt class="notifications"><a href="<%= admin_notifications_path %>">Notifications</a></dt>
+    </dl>
+  </div>
+  <div class="major">
+    <%= yield %>
+  </div>
+
+<%= hidden_field_tag '-path', root_url %>
+
+</body>
+</html>

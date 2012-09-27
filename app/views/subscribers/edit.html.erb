@@ -1,0 +1,32 @@
+<%= form_for(@subscriber, :url => profile_path) do |f| %>
+<% if @subscriber.errors.any? %>
+<div class="error_explanation">
+  <h2><%= pluralize(@subscriber.errors.count, "error") %> prohibited this subscriber from being saved:</h2>
+  <ul>
+    <% @subscriber.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <h2>
+    <%= @subscriber.email %>
+    <% unless @subscriber.detail && @subscriber.detail.email_authorized_at %>
+    <a href="<%= authorize_email_path %>">Authorize</a>
+    <% end %>
+  </h2>
+</div>
+<div class="field">
+  <%= f.label :nickname %><br />
+  <%= f.text_field :nickname %>
+</div>
+<div class="field">
+  <%= f.label :mobile %><br />
+  <%= f.text_field :mobile %>
+</div>
+<div class="action">
+  <%= f.submit :value => 'Save' %>
+</div>
+<% end %>

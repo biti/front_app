@@ -1,0 +1,16 @@
+<table>
+  <% @notifications.each do | notification | %>
+  <tr>
+    <td class="content">
+      <a href="<%= notification_path notification %>"><%= notification.content[0,79] + (notification.content.length > 80 ? "..." : "") %></a>
+      <h5><%= notification.created_at %></h5>
+    </td>
+    <td><%= %w{ NEW READ }[notification.state] %></td>
+    <td>
+      <%= link_to 'Read', read_notification_path(notification), method: :put %>
+      <%= link_to 'Stash', notification, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<%= will_paginate @notifications %>

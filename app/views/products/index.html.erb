@@ -1,0 +1,123 @@
+
+<div class="dingb">
+  <% unless @products.empty? %>
+	<div class="fl tpgj">
+	  <%= link_to product_path(@products.first) do %>
+  	  <%= image_tag @products.first.image1.url, size: '584x291' %>
+	  <% end %>
+	  <p class="lianxj">
+	    <%= link_to @products.first.title, product_path(@products.first) %>
+	  </p>
+    <p class="jiage">
+      <span class="fl qian">￥<%= @products.first.price %></span>
+      <span class="fl shic">市场价<%= @products.first.market_price %></span>
+    </p>
+  </div>
+  <% end %>
+  
+  <div class="fr tebietj">
+    <div class="biaot">今日特别推荐</div>
+    <div class="libggk">
+    	<ul>
+    	  <% (@products[1..3] or []).each do |product| %>
+      	<li>
+        	<div class="fl">
+        	  <%= link_to product_path(product) do %>
+          	  <%= image_tag product.image1.url, size: '84x85' %>
+        	  <% end %>
+        	</div>
+          
+          <div class="fr jiss">
+            <p class="lllk">
+              <%= link_to product.title, product_path(product) %>
+            </p>
+            <p class="tjjg">
+              <span class="qian">￥<%= product.price %></span>
+              <span class="shic">市场价<%= product.market_price %></span>
+            </p>
+            <p align="right">
+              <%= link_to product_path(product) do %>
+                <img src="images/ind_52.jpg" width="71" height="20" />
+              <% end %>
+            </p>
+          </div>
+          <div class="clr"></div>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="clr"></div>
+</div>
+
+<div class="tuijian"><img src="images/ind_56.jpg" width="81" height="35" /></div>
+
+<div class="tuongk">
+	<ul>
+	  <% (@products[4..7] or []).each do |product| %>
+  	<li>
+    	<div class="tpkngk">
+    	  <%= link_to product_path(product) do %>
+      	  <%= image_tag product.image1.url, size: '460x461' %>
+    	  <% end %>
+    	</div>
+    	<div class="zhekou">
+    	  <img src="images/ind_63.png" width="82" height="58" />
+    	</div>
+    	<div class="jikwmz">
+        <p class="lianxj">
+          <%= link_to product.title, product_path(product) %>
+        </p>
+        <p class="jiage">
+          <span class="fl qian">￥<%= product.price %></span>
+          <span class="fl shic">市场价<%= product.market_price %></span>
+          <span class="fr qukank">
+            <%= link_to product_path(product) do %>
+              <img src="images/ind_67.png" width="91" height="26" />
+            <% end %>
+          </span>
+        </p>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<div class="clr"></div>
+
+<div class="tuijian"><img src="images/ind_74.jpg" width="81" height="35" /></div>
+
+<div class="jxtuij">
+	<ul>
+	  <% (@products[8..20] or []).each do |product| %>
+  	<li>
+    	<div class="tpkngk1">
+    	  <%= link_to product_path(product) do %>
+      	  <%= image_tag product.image1.url, size: '300x300' %>
+    	  <% end %>
+    	</div>
+    	<div class="zhekou1">
+    	  <img src="images/ind_80.png" width="70" height="50" />
+    	</div>
+    	<div class="jikwmz1">
+        <p class="lianxj1">
+          <%= link_to product.title, product_path(product) %>
+        </p>
+        <p class="jiage1">
+          <span class="fl qian">￥<%= product.price %></span>
+          <span class="fl shic">市场价<%= product.market_price %></span>
+          <span class="fr qukank1">
+            <%= link_to product_path(product) do %>
+              <img src="images/ind_67.png" width="64" height="17" />
+            <% end %>
+          </span>
+        </p>
+      </div>
+    </li>
+    <% end %>
+	</ul>
+</div>
+<div class="clr"></div>
+
+<% @products.each do |product| %>
+  <%= link_to product.title, product_path(product) %>
+<% end %>

@@ -1,0 +1,23 @@
+<%= javascript_include_tag "application" %>
+
+<% payment_service_for @pay.id, ActiveMerchant::Billing::Integrations::Alipay::ACCOUNT,
+    :service => :alipay, :html => { :id => 'payment-form', :method => :post } do |service| %>
+  <% service.total_fee @pay.need_pay_online %>
+  <% service.seller :email => ActiveMerchant::Billing::Integrations::Alipay::EMAIL %>
+  <% service.notify_url 'http://113.11.199.93:3333/pays/alipay_notify' %>
+  <% service.return_url 'http://113.11.199.93:3333/pays/alipay_done' %>
+  <% service.show_url 'http://113.11.199.93:3333/pays/success' %>
+  <% service.body alipay_filter_param('body') %>
+  <% service.charset "utf-8" %>
+  <% service.service ActiveMerchant::Billing::Integrations::Alipay::Helper::CREATE_DIRECT_PAY_BY_USER %>
+  <% service.payment_type 1 %>
+  <% service.subject alipay_filter_param('kuaipinhui.com') %>
+  <% service.sign %>
+<% end %>
+
+<script>
+  jQuery(function($) {
+    $('#payment-form > div').remove();
+    $('form').submit();
+  });
+</script>

@@ -1,0 +1,9 @@
+安装rmagick 需要的包
+sudo apt-get install graphicsmagick-libmagick-dev-compat libmagickcore-dev libmagickwand-dev
+
+
+首页数据筛选，是根据商家还是根据产品，或者，排名的条件是如何定的
+
+展示商品的排序规则
+大段文字的图片位置
+

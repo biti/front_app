@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+admin:
+  username: admin
+  password: f0f16e6b3fd9e51dada5c32b3dcfcaac20c9b7a9
+  salt: FFaqjumt
+
+# two:
+#   username: MyString
+#   password: MyString
+#   salt: MyString

@@ -1,0 +1,18 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subscriber_id: 1
+  # order:
+  product_id: 1
+  content: Oops.
+  accepted_at:
+  finished_at:
+  remark:
+
+# two:
+#   order:
+#   product:
+#   content: MyString
+#   accepted_at: 2012-09-05 17:20:36
+#   finished_at: 2012-09-05 17:20:36
+#   remark: MyString

@@ -1,0 +1,91 @@
+
+<div id='cart-container' style='width:980px;margin: 0px auto;color:black;'>
+  <span style='font-size:24px;'>购物车</span>
+
+  <% unless @cart_datas.empty? %>
+    <div style='background-color: #F3F3F3;height: 33px;line-height: 33px;'>
+      <h1>
+        1. 查看购物车
+        2. 确认订单
+        3. 付款
+        4. 成功提交订单
+      </h1>
+    </div>
+  
+    <table id='cart-table' width="980" border="0" align="center" cellpadding="0" >
+      <tr style='background-color:#CCC;'>
+        <th>商品</td>
+        <th>颜色/尺寸</td>
+        <th>单价</td>
+        <th>数量</td>
+        <th>小计</td>
+        <th></td>
+      </tr>
+
+      <% @cart_datas.each do |partner, items| %>
+        <tr style='background-color:#E2F2FF;'>
+          <td colspan='6'>店铺：<%= partner %></td>
+        </tr>
+    
+        <% items.each do |item| %>
+        <tr class='cart-item'>
+          <td>
+            <%= link_to product_path(item.product_id) do %>
+              <%= image_tag item.image_url, :width => '60' %>
+            <% end %>
+            <%= link_to item.product_name, product_path(item.product_id) %>
+          </td>
+          <td>
+            <%= item.sku_specification %>
+          </td>
+        
+          <td>
+            <%=item.price%>
+          </td>
+      
+          <td>
+            <input type='text' data-item-id='<%= item.sku_id %>' 
+              data-last-quantity='<%=item.quantity%>' 
+              data-item-price='<%=item.price%>'
+              class='quantity-input' value='<%= item.quantity %>' size='4'/>        
+          </td>
+      
+          <td class='cart-item-total'>
+            <%= item.price * item.quantity %>
+          </td>
+          <td>
+            <%= link_to '删除', 'javascript:;', 
+              class: 'delete-button', 'data-item-id' => item.sku_id %>
+          </td>
+        </tr>
+        <% end %>
+      <% end %>
+    </table>
+  
+    <div style='border: 1px solid #CCC;background-color: #F3F3F3;height: 33px;line-height: 33px;width:980px;margin: 0px auto;'>
+    	<span style=''>
+    	  商品总价(不含运费)：
+    	  <em style='color: #F60;font: 24px tahoma;margin-right: 3px;text-shadow: 0 1px 1px #CCC;'>
+    	    <%= @total_fee %>
+    	  </em>元
+    	</span>
+    	<input type='button' value='结算' onclick='window.location = "/shopping/order";'
+    	  style='float:right;background-color: #FE9C44;font-size: 16px;font-weight: 700;height: 35px;width: 125px;'></input>
+  	  
+    </div>
+  <% else %>
+    <br/>
+    <span style='font-size:14px;'>
+      您的购物车内还没有商品,
+      <%= link_to '去首页挑选您喜欢的商品', root_path, :style => 'color:blue;' %>
+    </span>
+  <% end %>
+</div>
+
+<script>
+jQuery(function($) {
+
+  FrontApp.Shopping.Cart.init();
+
+});
+</script>

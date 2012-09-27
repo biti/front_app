@@ -1,0 +1,29 @@
+<div class="complaint">
+<%= form_for(@complaint, :url => { :action => "finish" }) do |f| %>
+<% if @complaint.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@complaint.errors.count, "error") %> prohibited this complaint from being saved:</h2>
+
+  <ul>
+    <% @complaint.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= link_to @complaint.product.name, @complaint.product %>
+<%= hidden_field_tag :product, @complaint.product.id %>
+<p class="content"><%= @complaint.content %></p>
+<div class="field">
+  <%= f.label :remark %><br />
+  <%= f.text_area :remark %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
+</div>
+
+<%= link_to 'Show', admin_complaint_path(@complaint) %> |
+<%= link_to 'Back', admin_complaints_path %>

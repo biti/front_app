@@ -1,0 +1,24 @@
+<ul>
+  <% @reviews.each do |review| %>
+  <li>
+    <div class="product">
+      <%= render :partial => "bookmarks/product", :object => review.product %>
+    </div>
+    <div class="review">
+      <h2>
+	<%= review.title %>
+	<span><%= review.rank %></span>
+      </h2>
+      <p><%= review.content %></p>
+      <div class="actions">
+	<%= link_to 'Show', review %>
+	<%= link_to 'Edit', edit_review_path(review) %>
+	<%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
+<%= will_paginate %>
+
+<%= link_to 'New Review', new_review_path %>

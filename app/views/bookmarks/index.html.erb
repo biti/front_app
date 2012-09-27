@@ -1,0 +1,14 @@
+<% if @bookmarks.empty? %>
+<p>No bookmark yet.</p>
+<% else %>
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+  <li class="product">
+    <%= render :partial => "product", :object => bookmark.product %>
+    <div class="actions">
+      <%= link_to "Remove", bookmark, :method => :delete %>
+    </div>
+  </li>
+  <% end %>
+</ul>
+<% end %>

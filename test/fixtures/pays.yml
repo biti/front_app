@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subscriber_id: 1
+  need_pay: 9.99
+  paid: 9.99
+  pay_refunded: 9.99
+  started_at: 2012-09-07 17:44:14
+  completed_at: 2012-09-07 17:44:14
+  status: 1
+
+two:
+  subscriber_id: 1
+  need_pay: 9.99
+  paid: 9.99
+  pay_refunded: 9.99
+  started_at: 2012-09-07 17:44:14
+  completed_at: 2012-09-07 17:44:14
+  status: 1

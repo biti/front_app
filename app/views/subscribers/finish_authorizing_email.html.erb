@@ -1,0 +1,5 @@
+<% if @subscriber && @subscriber.detail && @subscriber.detail.email_authorized_at %>
+<p><a href="<%= home_path %>"><%= @subscriber.email %></a> authorized.</p>
+<% else %>
+<p>Invalid authorization or expired.</p>
+<% end %>

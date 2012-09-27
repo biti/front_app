@@ -1,0 +1,50 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require thickbox
+ *= require jquery.jqzoom
+ *= require_tree .
+ */
+
+body {
+    font-family: Tahoma, "Microsoft Yahei";
+    font-size: 12px;
+    line-height: 1.5;
+    color: #333;
+    min-width: 960px;
+}
+
+.clear {
+    clear: both;
+}
+
+a {
+    color: #39f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#notice {
+    background: none repeat scroll 0 0 lightyellow;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    color: green;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+}
+
+#error_explanation {
+    margin-bottom: 15px;
+    color: red;
+}

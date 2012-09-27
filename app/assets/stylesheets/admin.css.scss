@@ -1,0 +1,31 @@
+body.admin {
+    padding: 40px 0;
+
+    .minor {
+	width: 195px;
+	float: left;
+	text-align: right;
+
+	dt {
+	    padding: 5px 15px;
+	}
+    }
+    .major {
+	margin-left: 200px;
+    }
+}
+
+body.admin.landing_pages .minor .landing_pages,
+body.admin.returnings .minor .returnings,
+body.admin.complaints .minor .complaints,
+body.admin.reports .minor .reports,
+body.admin.announcements .minor .announcements,
+body.admin.notifications .minor .notifications,
+ {
+    background: black;
+    color: white;
+
+    a {
+	color: orange;
+    }
+}

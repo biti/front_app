@@ -1,0 +1,31 @@
+<%= javascript_include_tag "application" %>
+
+<% payment_service_for @pay.id, ActiveMerchant::Billing::Integrations::Tenpay::ACCOUNT,
+   :service => :tenpay, :html => { :id => 'pay-form', :method => :get } do |service| %>
+   
+  <% service.bargainor_id     ActiveMerchant::Billing::Integrations::Tenpay::ACCOUNT %>
+  <% service.key              ActiveMerchant::Billing::Integrations::Tenpay::KEY %>
+  <% service.cmdno            1 %>
+  <% service.sp_billno        @pay.id %>
+  <% service.total_fee        (@pay.need_pay_online*100).round %>
+  <% service.fee_type         1 %>
+  <% service.desc             'kuaipinhui.com' %>
+
+  <% service.return_url       'http://113.11.199.93:3333/pays/tenpay_done' %>
+  <% service.date             tenpay_date %>
+  <% service.spbill_create_ip '124.11.11.11' %>
+  <% service.bank_type        params[:bank_type] || '0' %>
+  <% service.cs               'utf-8' %>
+  <% service.transaction_id   tenpay_transaction_id(@pay.id) %>
+
+  <% service.attach           'attach' %>
+  <% service.sign %>
+
+<% end %>
+
+<script>
+  jQuery(function($) {
+    $('#pay-form > div').remove();
+    $('form').submit();
+  });
+</script>

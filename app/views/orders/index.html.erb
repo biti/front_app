@@ -1,0 +1,53 @@
+<%= link_to '继续购物', root_path %><br/>
+
+<span style='font-size:20px'>我的订单</span>
+
+<% if @orders.empty? %>
+  <p>没有订单</p>
+<% else %>
+
+  <table width='780'>
+    <tr style='background-color:#CCC;'>
+      <th>订单编号</th>
+      <th>商品</th>
+      <th>总金额</th>
+      <th>已付金额</th>
+      <th>订单状态</th>  
+      <th></th>
+    </tr>
+
+    <% @orders.each do |order| %>
+    <tr class=''>
+      <td>
+        <%= order.id %>
+      </td>
+      <td>
+        <% order.items.each do |item| %>
+          <%= link_to product_path(item.product_id) do %>
+            <%= image_tag item.image_url, :size => '40x40' %>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <%= order.total_fee %>
+      </td>
+      <td>
+        <%= order.payment %>
+      </td>
+      <td>
+        <%= order.human_status %>
+      </td>
+      <td>
+        <%= link_to '详情', '#' %>
+        <% if order.waiting_pay? %>
+          <%= link_to '付款', "#{pays_new_path}?order_ids=#{order.id}" %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+  <%= will_paginate @orders, per_page: 10 %>  
+<% end %>
+
+

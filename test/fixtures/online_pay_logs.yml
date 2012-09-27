@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pay_item_id: 1
+  pay_id: 1
+  channel: MyString
+  channel_no: MyString
+  need_pay: 9.99
+  paid: 9.99
+  started_at: 2012-09-07 17:50:04
+  completed_at: 2012-09-07 17:50:04
+  status: 1
+  failure_reason: MyString
+
+two:
+  pay_item_id: 1
+  pay_id: 1
+  channel: MyString
+  channel_no: MyString
+  need_pay: 9.99
+  paid: 9.99
+  started_at: 2012-09-07 17:50:04
+  completed_at: 2012-09-07 17:50:04
+  status: 1
+  failure_reason: MyString

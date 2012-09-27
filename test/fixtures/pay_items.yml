@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pay_id: 1
+  order_id: 1
+  need_pay_cash: 9.99
+  paid_cash: 9.99
+  refunded_cash: 9.99
+  need_pay_credit: 9.99
+  paid_credit: 9.99
+  refunded_credit: 9.99
+  need_pay_online: 9.99
+  paid_online: 9.99
+  refunded_online: 9.99
+
+two:
+  pay_id: 1
+  order_id: 1
+  need_pay_cash: 9.99
+  paid_cash: 9.99
+  refunded_cash: 9.99
+  need_pay_credit: 9.99
+  paid_credit: 9.99
+  refunded_credit: 9.99
+  need_pay_online: 9.99
+  paid_online: 9.99
+  refunded_online: 9.99

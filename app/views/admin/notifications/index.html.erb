@@ -1,0 +1,12 @@
+<ul>
+  <% @notifications.each do | notification | %>
+  <li>
+    <h2><%= notification.to.email %> <%= link_to 'Show', admin_notification_path(notification) %></h2>
+    <p><%= notification.content %></p>
+    <h5><%= %w{NEW READ STASHED}[notification.state] %></h5>
+  </li>
+  <% end %>
+</ul>
+<%= will_paginate @notifications %>
+
+<%= link_to 'New Notification', new_admin_notification_path %>

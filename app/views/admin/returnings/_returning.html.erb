@@ -1,0 +1,36 @@
+<h2>
+  <%= link_to returning.product.name, returning.product %>
+</h2>
+<span class="subscriber"><%= returning.subscriber.email %></span>
+<span class="quantity">x <%= returning.quantity %></span>
+<% if returning.amount %>
+<span class="amount">= ￥<%= returning.amount %></span>
+<% end %>
+<% if returning.delivered_at %>
+(<span class="deliverer"><%= returning.deliverer %></span>:
+<span class="tracking_no"><%= returning.tracking_no %></span>)
+<% end %>
+<p class="cause"><%= returning.cause %></p>
+<% if returning.remark %>
+<p class="remark"><%= returning.remark %></p>
+<% end %>
+<% if returning.accepted_at %>
+<h5><b>Accepted at:</b><%= returning.accepted_at %></h5>
+<% if returning.delivered_at %>
+<h5><b>Delivered at:</b><%= returning.delivered_at %></h5>
+<% end %>
+<% end %>
+<% if returning.settled_at %>
+<h5><b><%= %w{Solved Cancelled Rejected}[returning.settle] %> at:</b><%= returning.settled_at %></h5>
+<% end %>
+<div class="actions">
+  <%= link_to 'Show', admin_returning_path(returning), :class => 'show' %>
+  <% if returning.settled_at.nil? %>
+  <% if returning.accepted_at.nil? %>
+  <%= link_to 'Accept', admin_accept_returning_path(returning) %>
+  <%= link_to 'Reject', admin_reject_returning_path(returning) %>
+  <% elsif returning.delivered_at %>
+  <%= link_to 'Solve', admin_solve_returning_path(returning) %>
+  <% end %>
+  <% end %>
+</div>

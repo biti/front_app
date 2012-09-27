@@ -1,0 +1,20 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<div class="product">
+  <%= render :partial => "bookmarks/product", :object => @review.product %>
+</div>
+<div class="review">
+  <h2>
+    <b><%= @review.subscriber.email.sub(/@.*$/, '') %></b>:
+    <%= @review.title %>
+    <span><%= @review.rank %></span>
+  </h2>
+  <p><%= @review.content %></p>
+</div>
+
+<% if @review.subscriber == @subscriber %>
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<% end %>
+<%= link_to 'Back', reviews_path %>

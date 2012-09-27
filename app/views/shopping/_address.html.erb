@@ -1,0 +1,54 @@
+
+<div id='address-area'>
+  <span style='font-size:18px'>确认收货地址</span>
+</div>
+
+<ul id='address-list' 
+  style='line-height:30px;border:0px solid #EEE;padding:5px 5px 5px 10px; margin-bottom:10px;'>
+
+  <% @subscriber.shipping_addresses.order('created_at DESC').each do |address, index| %>
+  <li class='address-item'>
+    <input type='radio' id='address-id-<%=address.id%>' name='address_id' value='<%=address.id%>'>
+    <label id='address-label-<%=address.id%>' for='address-id-<%=address.id%>'>
+      <span attrname='name'><%=address.receiver %></span>
+    	
+      <span attrname='province'><%= address.region.parent.parent.title %></span>
+      <span attrname='city'><%= address.region.parent.title %></span>
+      <span attrname='district'><%= address.region.title %></span>
+      <span attrname='address'><%= address.address %></span>
+      <span attrname='mobile'><%= address.mobile %></span>
+      <span attrname='zip'><%= address.zip %></span>
+    </label>
+    
+    <span style='float:right;'>
+      <a href='/shopping/edit_address?id=<%=address.id%>?KeepThis=true&TB_iframe=true&height=250&width=400' class='thickbox' style='color:blue;'>修改</a>
+    </span>
+  </li>
+  <% end %>
+</ul>
+
+<script>
+  jQuery(function($) {
+    $(':radio').first().attr('checked', 'checked');
+    
+    if( $('.address-item').length === 0 ) {
+      tb_show('请填写您的送货地址：', 'new_address?KeepThis=true&TB_iframe=true&modal=true&height=250&width=400', '');
+    }
+    
+    $('#submit-button').click(function() {
+      var form = $('form');
+      $.post(form.attr('action'), form.serialize())
+      .success(function(resp) {
+
+        if(resp.result === 'error') {
+          $('#error_explanation').html(resp.message);
+        }else {
+          parent.tb_remove();
+          parent.$('#address-label-<%=@shipping_address.id%>').html(resp);
+        }
+      });
+
+    });
+    
+  });
+</script>

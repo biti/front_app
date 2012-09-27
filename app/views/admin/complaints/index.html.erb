@@ -1,0 +1,37 @@
+<% if @complaints.empty? %>
+<p>No complaint.</p>
+<% else %>
+<ul>
+  <% @complaints.each do |complaint| %>
+  <li class="complaint">
+    <h2><%= link_to complaint.product.name, complaint.product %></h2>
+    <p class="content"><%= complaint.content %></p>
+    <p class="remark"><%= complaint.remark %></p>
+    <% if complaint.accepted_at %>
+    <h5>
+      <b>Accepted at:</b>
+      <%= complaint.accepted_at %>
+    </h5>
+    <% end %>
+    <% if complaint.finished_at %>
+    <h5>
+      <b>Solved at:</b>
+      <%= complaint.finished_at %>
+    </h5>
+    <% end %>
+    <div class="actions">
+      <%= link_to 'Show', admin_complaint_path(complaint) %>
+      <% unless complaint.finished_at %>
+      <% unless complaint.accepted_at %>
+      <%= link_to 'Accept', admin_accept_complaint_path(complaint), method: :put, data: { confirm: 'Are you sure?' }  %>
+      <% else %>
+      <%= link_to 'Finish', admin_edit_complaint_path(complaint) %>
+      <% end %>
+      <% end %>
+    </div>
+  </li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= will_paginate %>

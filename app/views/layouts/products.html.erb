@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/images/css.css" rel="stylesheet" type="text/css" />
+<title>无标题文档</title>
+</head>
+<body>
+<div class="top ymkd">
+	<div class="fl dhkb">
+    <ul>
+    	<li>
+    	  <%= link_to root_path do %>
+      	  <img alt="摩登" src="/images/ind_05.jpg" width="69" height="45" />
+    	  <% end %>
+    	</li>
+    	<li>
+    	  <%= link_to root_path do %>
+      	  <img alt="全部" src="/images/ind_07.jpg" width="60" height="45" />
+    	  <% end %>
+    	</li>
+    	<li><img alt="69元专区" src="/images/ind_09.jpg" width="60" height="45" /></li>
+    	<li><img alt="主题专区" src="/images/ind_11.jpg" width="60" height="45" /></li>
+    	<li><img alt="摩登秀" src="/images/ind_13.jpg" width="60" height="45" /></li>
+    	<li><img alt="邀请返利" src="/images/ind_16.jpg" width="60" height="45" /></li>
+    </ul>
+    
+  </div>
+    <div class="fr topyb">
+    	<div class="fl sousuo">
+   	   <form action="#">
+            <input name="keywords" id="keywords" type="text" class="input" style="width:80px; height:24px; line-height:24px; border:0; margin:0; padding:0; color:#999" size="30"/>
+            <input type="submit" name="button" id="button" value="搜索"  style=" border:0; background:#fff" />
+        </form>
+        </div>
+        <div class="fl gouwc">
+          <%= link_to '/shopping/cart' do %>
+            <img src="/images/ind_21.jpg" width="40" height="27" />
+          <% end %>
+        </div>
+        <div class="fl xial">
+          <%= link_to '我的订单', orders_path %>
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>
+<div class="dhang ymkd">
+	<ul>
+    	<li><a href="#">女装</a></li>
+    	<li><a href="#">男装</a></li>
+    	<li><a href="#">童装</a></li>
+    	<li><a href="#">鞋</a></li>
+    	<li><a href="#">包</a></li>
+    	<li><a href="#">运动</a></li>
+    	<li><a href="#">户外</a></li>
+    	<li><a href="#"> 服饰</a></li>
+    	<li><a href="#">家纺</a></li>
+    </ul>
+    <div class="clr"></div>
+</div>
+
+<%= yield %>
+
+<%= hidden_field_tag '-path', root_url %>
+
+<div class="dibu">
+	<div class="fl bbbz">
+    	<div class="bkttt">新手帮助：</div>
+        <div class="xialj">
+        	<ul>
+            	<li><a href="#">免费注册</a></li>
+            	<li><a href="#">购物流程</a></li>
+            	<li><a href="#">会员介绍</a></li>
+            	<li><a href="#">常见问题</a></li>
+            	<li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+	<div class="fl bbbz">
+    	<div class="bkttt1">摩登保障</div>
+        <div class="xialj">
+        	<ul>
+            	<li><a href="#">七天无理由退换货</a></li>
+            	<li><a href="#">100%正品保证</a></li>
+            	<li><a href="#">价格保护</a></li>
+            	<li><a href="#">提供发票</a></li>
+            	<li><a href="#">退款流程</a></li>
+            </ul>
+        </div>
+    </div>
+	<div class="fl bbbz">
+    	<div class="bkttt2">支付方式</div>
+        <div class="xialj">
+        	<ul>
+            	<li><a href="#">网银支付</a></li>
+            	<li><a href="#">信用卡支付</a></li>
+            	<li><a href="#">支付宝支付</a></li>
+            	<li><a href="#">财付通支付</a></li>
+            	<li><a href="#">移动手机支付</a></li>
+            </ul>
+        </div>
+    </div>
+	<div class="fl bbbz">
+    	<div class="bkttt3">商家帮助</div>
+        <div class="xialj">
+        	<ul>
+            	<li><a href="#">商家入驻</a></li>
+            	<li><a href="#">商家中心</a></li>
+            	<li><a href="#">摩登规则</a></li>
+            	<li><a href="#">商家成长</a></li>
+            </ul>
+        </div>
+    </div>
+	<div class="fl bbbz">
+    	<div class="bkttt4">VIP说明</div>
+        <div class="xialj">
+        	<ul>
+            	<li><a href="#">什么是vip</a></li>
+            	<li><a href="#">用户vip</a></li>
+            	<li><a href="#">商家vip</a></li>
+            	<li><a href="#">联盟账户vip</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>

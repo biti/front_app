@@ -1,0 +1,32 @@
+<%= form_for(@landing_page) do |f| %>
+<% if @landing_page.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@landing_page.errors.count, "error") %> prohibited this landing_page from being saved:</h2>
+
+  <ul>
+    <% @landing_page.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :domain %><br />
+  <%= f.text_field :domain %>
+</div>
+<div class="field file">
+  <%= label_tag :load %><br />
+  <%= render :partial => "resources/file_combo", :object => (f.hidden_field :background_image) %>
+</div>
+<div class="actions">
+  <%= f.submit :value => 'Upload' %>
+</div>
+<% end %>
+
+<ul class="notes">
+  <li>
+    domain name should be 'baidu.com' like,
+    or <code>BLANK</code> for no referer, '*' for else.
+  </li>
+</ul>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fair</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="front <%= controller.controller_name %> <%= controller.action_name %>">
+
+<%= yield %>
+
+<%= hidden_field_tag '-path', root_url %>
+
+</body>
+</html>

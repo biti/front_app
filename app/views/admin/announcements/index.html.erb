@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_announcements.each do |admin_announcement| %>
+  <tr>
+    <td>
+      <h2><%= admin_announcement.title %></h2>
+      <p><%= admin_announcement.content[0..79] + (admin_announcement.content.length > 80 && "..." || "") %></p>
+      <h5><%= admin_announcement.created_at %></h5>
+    </td>
+    <td><%= link_to 'Show', admin_announcement %></td>
+    <td><%= link_to 'Edit', edit_admin_announcement_path(admin_announcement) %></td>
+    <td><%= link_to 'Destroy', admin_announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @admin_announcements %>
+
+<%= link_to 'New Announcement', new_admin_announcement_path %>

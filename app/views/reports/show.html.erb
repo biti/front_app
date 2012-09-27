@@ -1,0 +1,19 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<div class="product">
+  <%= render :partial => "bookmarks/product", :object => @report.product %>
+  <div class="report">
+    <span class="retailer"><%= @report.retailer %></span>
+    <span class="receipt_date"><%= @report.receipt_date %></span>
+    <span class="receipt_price">￥<%= @report.receipt_price %></span>
+    <span class="price">￥<%= @report.price %></span>
+    <h5><%= @report.finished_at && format("%s [SOLVED]", @report.finished_at) ||
+	    @report.accepted_at && format("%s [ACCEPTED]", @report.accepted_at) %></h5>
+  </div>
+  <img class="receipt" src="<%= resource_url @report.receipt_photo %>" />
+</div>
+
+<%= link_to 'Edit', edit_report_path(@report) %> |
+<%= link_to 'Back', reports_path %>

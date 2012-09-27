@@ -1,0 +1,9 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<div class="returning">
+  <%= render :partial => "returning", :object => @returning %>
+</div>
+
+<%= link_to "Back", returnings_path %>

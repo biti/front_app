@@ -1,0 +1,35 @@
+// Place all the styles related to the admin::notifications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.admin.notifications {
+    h2 {
+	font-size: 120%;
+	font-weight: bold;
+	margin: 5px 0;
+
+	a {
+	    font-size: 75%;
+	    font-weight: normal;
+	    margin-left: 15px;
+	}
+    }
+
+    p {
+	margin: 5px;
+	color: #555;
+    }
+
+    h5 {
+	font-size: 90%;
+	margin: 5px;
+    }
+
+    input, textarea {
+	display: block;
+	padding: 5px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	margin: 5px 0;
+    }
+}

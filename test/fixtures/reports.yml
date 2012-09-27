@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subscriber_id: 1
+  product_id: 1
+  price: 678
+  retailer:
+  receipt_photo: 12/09/05/cmr_DiRmSLZ1hJuwCfi-kEiGA7Y.jpeg
+  receipt_price: 339
+  receipt_date: 2012-09-05
+  accepted_at: 2012-09-05 13:50:14
+  finished_at: 2012-09-05 13:50:14
+
+# two:
+#   subscriber: 
+#   product: 
+#   price: 9.99
+#   retailer: MyString
+#   receipt_photo: MyString
+#   receipt_price: 9.99
+#   receipt_date: 2012-09-05
+#   accepted_at: 2012-09-05 13:50:14
+#   finished_at: 2012-09-05 13:50:14

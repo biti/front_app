@@ -1,0 +1,7 @@
+<span attrname='name'><%=@shipping_address.receiver %></span>
+<span attrname='province'><%= @shipping_address.region.parent.parent.title %></span>
+<span attrname='city'><%= @shipping_address.region.parent.title %></span>
+<span attrname='district'><%= @shipping_address.region.title %></span>
+<span attrname='address'><%= @shipping_address.address %></span>
+<span attrname='mobile'><%= @shipping_address.mobile %></span>
+<span attrname='zip'><%= @shipping_address.zip %></span>

@@ -1,0 +1,65 @@
+body.landing_pages.index,
+body.landing_pages.show {
+
+    li.page {
+	width: 375px;
+	height: 280px;
+	position: relative;
+	float: left;
+	margin: 0 5px 5px 0;
+
+	.thumbnail {
+	    width: 375px;
+	    height: 280px;
+	}
+
+	.actions {
+	    position: absolute;
+	    bottom: 0;
+	    width: 365px;
+	    height: 40px;
+	    padding: 5px;
+	    background: rgba(0, 0, 0, 0.75);
+
+	    h5 {
+		font-size: 120%;
+		font-family: monospace;
+		font-weight: bold;
+		color: white;
+	    }
+
+	    ul {
+		float: right;
+
+		li {
+		    float: left;
+		    margin: 0 5px;
+
+		    a {
+			color: wheat;
+		    }
+
+		    a:hover {
+			color: orange;
+		    }
+		}
+	    }
+	}
+    }
+}
+
+body.landing_pages.new,
+body.landing_pages.edit {
+    input {
+	margin: 5px 0;
+	padding: 5px;
+    }
+
+    input[type=text] {
+	width: 230px;
+    }
+
+    .notes {
+	font-size: 90%;
+    }
+}

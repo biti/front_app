@@ -1,0 +1,8 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subscriber_id: 1
+  product_id: 2
+  rank: 5
+  title: 强大的 WMF
+  content: 看来很不起眼的水杯而已，居然可以做这么多设计，卖这么些钱，强大。

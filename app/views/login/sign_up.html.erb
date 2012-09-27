@@ -1,0 +1,33 @@
+<style type="text/css">
+.login {
+    background: url(<%= @background_image %>) no-repeat fixed 100% 100%;
+    background-size: cover;
+    width: 100%;
+}
+</style>
+
+<div class="major">
+  <div class="head">
+    <div class="brand"></div>
+  </div>
+  <div class="words"></div>
+
+  <%= form_for(@subscriber, :url => { :action => 'sign_up' }) do |f| %>
+  <%= hidden_field_tag :invitation, params[:invitation] %>
+  <%= hidden_field_tag :background, @background_image %>
+  免费获得邀请<br />
+  <div class="field">
+    <%= f.text_field :email, :placeholder => '电子邮件' %>
+  </div>
+  <div class="field password" style="display: none;">
+    <%= f.password_field :password, :placeholder => '密码' %>
+  </div>
+  <a href="<%= sign_in_path %>">已经注册？</a>
+  <div class="action">
+    <%= f.submit :value => '' %>
+  </div>
+  <% end %>
+
+  <%= hidden_field_tag '-sign_in', sign_in_url %>
+  <div class="clear"></div>
+</div>

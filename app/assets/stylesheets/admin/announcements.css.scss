@@ -1,0 +1,35 @@
+body.admin.announcements {
+    td {
+	padding: 5px;
+
+	h2 {
+	    font-weight: bold;
+	    margin: 5px 0;
+	}
+
+	p {
+	    color: #555;
+	    margin: 5px 0;
+	}
+
+	h5 {
+	    text-align: right;
+	    margin: 5px;
+	    font-size: 90%;
+	}
+    }
+
+    h1 {
+	font-size: 12pt;
+	font-weight: bold;
+	margin-bottom: 15px;
+    }
+
+    input, textarea {
+	display: block;
+	padding: 5px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	margin: 5px 0;
+    }
+}

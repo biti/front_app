@@ -1,0 +1,17 @@
+<li class='address-item'>
+  <input type='radio' id='address-id-<%=@shipping_address.id%>' 
+    name='address_id' value='<%=@shipping_address.id%>' checked='checked'>
+  <label id='address-label-<%=@shipping_address.id%>' for='address-id-<%=@shipping_address.id%>'>
+    <span attrname='name'><%=@shipping_address.receiver %></span>
+    <span attrname='province'><%= @shipping_address.region.parent.parent.title %></span>
+    <span attrname='city'><%= @shipping_address.region.parent.title %></span>
+    <span attrname='district'><%= @shipping_address.region.title %></span>
+    <span attrname='address'><%= @shipping_address.address %></span>
+    <span attrname='mobile'><%= @shipping_address.mobile %></span>
+    <span attrname='zip'><%= @shipping_address.zip %></span>
+  </label>
+  
+  <span style='float:right;'>
+    <a href='javascript:;' class='thickbox' style='color:blue;' onclick="tb_show('请填写您的送货地址：', '/shopping/edit_address?id=<%=@shipping_address.id%>?KeepThis=true&TB_iframe=true&height=250&width=400', '');">修改</a>
+  </span>
+</li>

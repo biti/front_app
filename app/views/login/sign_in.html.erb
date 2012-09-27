@@ -1,0 +1,29 @@
+<style type="text/css">
+.login {
+    background: url(<%= @background_image %>) no-repeat fixed 100% 100%;
+    background-size: cover;
+    width: 100%;
+}
+</style>
+
+<div class="major">
+  <div class="head">
+    <div class="brand"></div>
+  </div>
+  <div class="words"></div>
+
+  <%= form_for(@subscriber, :url => { :action => 'sign_in' }) do |f| %>
+  <a href="<%= sign_up_path %>">注册</a>
+  <div class="field">
+    <%= f.text_field :email, :placeholder => '电子邮件' %>
+  </div>
+  <div class="field password">
+    <%= f.password_field :password, :placeholder => '密码' %>
+  </div>
+  <a href="<%= reset_password_path %>">忘记密码</a>
+  <div class="action">
+    <%= f.submit :value => '' %>
+  </div>
+  <% end %>
+  <div class="clear"></div>
+</div>

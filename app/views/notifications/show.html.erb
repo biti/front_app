@@ -1,0 +1,6 @@
+<div class="notification">
+  <h5><%= @notification.created_at %></h5>
+  <p><%= @notification.content %></p>
+  <%= link_to 'Back', notifications_path %>
+  <%= link_to 'Stash', @notification, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

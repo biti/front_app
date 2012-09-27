@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subscriber: 1
+  code: naFDkPS1EeGOXQgAJ3vPLw
+
+two:
+  subscriber: 1
+  code: qrI0wvS1EeGbgQgAJ3vPLw

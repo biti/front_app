@@ -1,0 +1,71 @@
+// Place all the styles related to the admin::returnings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin.returnings {
+    .returning {
+	margin-bottom: 15px;
+	padding: 10px 10px 10px 20px;
+	width: 750px;
+	border-bottom: 1px dashed #ccc;
+	position: relative;
+
+	h2 {
+	    font-size: 120%;
+	    margin-left: -10px;
+	}
+
+	.subscriber {
+	    display: block;
+	    color: brown;
+	}
+
+	.amount {
+	    font-size: 120%;
+	    color: red;
+	}
+
+	.cause {
+	    margin: 5px 0;
+	    color: #555;
+	}
+
+	.remark {
+	    padding: 5px;
+	    border-radius: 5px;
+	    background: lightcyan;
+	}
+
+	.actions {
+	    position: absolute;
+	    top: 15px;
+	    right: 15px;
+
+	    a {
+		margin-right: 5px;
+	    }
+	}
+    }
+
+    input, textarea {
+	display: block;
+	padding: 5px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	margin: 5px 0;
+    }
+}
+
+.admin.returnings.show {
+    .actions .show {
+	display: none;
+    }
+}
+
+.admin.returnings.accept,
+.admin.returnings.solve,
+.admin.returnings.reject {
+    .actions {
+	display: none;
+    }
+}

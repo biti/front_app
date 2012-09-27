@@ -1,0 +1,57 @@
+<div id='cart-container' style='width:980px;margin: 0px auto;color:black;'>
+
+  <span style='font-size:24px;'>支付</span>
+
+  <style>
+    .pay-channel img {border: 1px solid #F3F3F3;}
+  </style>
+  <br/>
+  <span style='font-size:20px;'>应付金额:<%=@total_fee%>元</span>
+  
+  <br><br/>
+  <% if @pay_cash > 0 %>
+    <span style='font-size:14px;'>
+      使用账户余额支付：<%=@pay_cash%>元<br/>
+    </span>
+  <% end %>
+  
+  <% if @pay_credit > 0 %>
+    <span style='font-size:14px;'>
+      使用返利支付：<%=@pay_credit %>元<br/>
+    </span>
+  <% end %>
+  <br/>
+
+  <% if @pay_online <= 0%>
+    <%= link_to '确定', "#{pays_pay_url}?order_ids=#{params[:order_ids]}", 
+      style: 'font-size:14px;color:green;' %>
+  <% else %>
+    <span style='font-size:14px;'>
+      <% if @pay_cash > 0 or @pay_credit > 0 %>剩余<% end %>
+      使用网银支付：
+    </span><br/><br/>
+
+    <% PAYMENT_CHANNEL[:tenpay][:banks].each do |bank| %>
+      <%= bank_pay_button '#tenpay-form', "#bank_type", bank %>
+    <% end %>
+
+    <br/><br/>
+
+    <span style='font-size:14px;'>
+      <% if @pay_cash > 0 or @pay_credit > 0 %>剩余<% end %>
+      使用网银支付：
+    </span><br/><br/>
+
+
+    <%= link_to "#{pays_pay_url}?order_ids=#{params[:order_ids]}&pay_channel=alipay", 
+        class: 'pay-channel', target: '_blank' do %>
+      <%= image_tag 'pay/alipay.png', size: '150x40' %>
+    <% end %>
+
+    <%= link_to "#{pays_pay_url}?order_ids=#{params[:order_ids]}&pay_channel=tenpay", 
+        class: 'pay-channel', target: '_blank' do %>
+      <%= image_tag 'pay/tenpay.png', size: '150x40' %>
+    <% end %>
+    
+  <% end %>
+</div>

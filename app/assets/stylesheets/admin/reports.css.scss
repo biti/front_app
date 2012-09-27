@@ -1,0 +1,73 @@
+body.admin.reports.index,
+body.admin.reports.show {
+    .product {
+	width: 750px;
+	padding: 10px;
+	position: relative;
+
+	.image {
+	    float: left;
+	    width: 160px;
+	    text-align: center;
+
+	    img {
+		max-width: 150px;
+		max-height: 150px;
+	    }
+	}
+
+	.brief {
+	    float: left;
+	    width: 600px;
+	    padding: 10px;
+
+	    h2 {
+		font-size: 180%;
+	    }
+
+	    .price {
+		font-size: 150%;
+		font-weight: bold;
+		color: red;
+	    }
+	}
+
+	.actions {
+	    position: absolute;
+	    bottom: 15px;
+	    right: 15px;
+	}
+    }
+
+    .report {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	text-align: right;
+
+	.subscriber {
+	    font-size: 120%;
+	    color: #39f;
+	    display: block;
+	}
+
+	.retailer {
+	    font-size: 120%;
+	    font-weight: bold;
+	}
+
+	.receipt_price {
+	    display: block;
+	    color: red;
+	    font-size: 150%;
+	}
+
+	.price {
+	    text-decoration: line-through;
+	}
+    }
+
+    img.receipt {
+	width: 750px;
+    }
+}

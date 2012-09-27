@@ -1,0 +1,18 @@
+<ul>
+  <% @landing_pages.each do |landing_page| %>
+  <li class="page">
+    <%= image_tag resource_url(landing_page.background_image), class: "thumbnail" %>
+    <div class="actions">
+      <h5><%= landing_page.domain || 'N/A' %></h5>
+      <ul>
+	<li><%= link_to 'Show', landing_page %></li>
+	<li><%= link_to 'Edit', edit_admin_landing_page_path(landing_page) %></li>
+	<li><%= link_to 'Destroy', landing_page, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    </div>
+  </li>
+  <% end %>
+</ul>
+<div class="clear"></div>
+
+<%= link_to 'New Landing page', new_admin_landing_page_path %>

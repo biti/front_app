@@ -1,0 +1,9 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<div class="product">
+<%= render :partial => "product", :object => @bookmark.product %>
+</div>
+
+<%= link_to 'Back', bookmarks_path %>

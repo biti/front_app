@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  domain:
+  region: 
+  background_image: 12/09/01/yJYd_jL3GoNkvmpESEGXBqONDQI.jpeg
+
+two:
+  domain:
+  region: 
+  background_image: 12/09/01/8ZMKVFTkNeQPRG7V7oZL2APgzZg.jpeg

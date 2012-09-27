@@ -1,0 +1,26 @@
+<% if @reports.empty? %>
+<p>No report.</p>
+<% else %>
+<ul>
+  <% @reports.each do |report| %>
+  <li class="product">
+    <%= render :partial => "bookmarks/product", :object => report.product %>
+    <div class="report">
+      <span class="retailer"><%= report.retailer %></span>
+      <span class="receipt_date"><%= report.receipt_date %></span>
+      <span class="receipt_price">￥<%= report.receipt_price %></span>
+      <span class="price">￥<%= report.price %></span>
+      <h5><%= report.finished_at && format("%s [SOLVED]", report.finished_at) ||
+	      report.accepted_at && format("%s [ACCEPTED]", report.accepted_at) %></h5>
+    </div>
+    <div class="actions">
+      <%= link_to 'Show', report %>
+      <%= link_to 'Edit', edit_report_path(report) %>
+      <%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= will_paginate %>

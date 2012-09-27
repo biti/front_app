@@ -1,0 +1,33 @@
+// Place all the styles related to the notifications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.front.notifications.index {
+    tr:hover {
+	background: lightyellow;
+    }
+
+    td {
+	padding: 5px;
+	color: #555;
+    }
+
+    td.content {
+	width: 640px;
+    }
+}
+
+.front.notifications.show {
+    .notification {
+	width: 800px;
+
+	h5 {
+	    text-align: right;
+	    color: #555;
+	}
+
+	p {
+	    margin: 15px 0;
+	}
+    }
+}

@@ -1,0 +1,10 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+tsai:
+  subscriber: 1
+  email_authorized_at: 2012-09-03 10:34:22
+  mobile_authorized_at: 2012-09-03 10:34:22
+  payment_password:
+  payment_salt:
+  rank_id: 
+  expired_at:

@@ -1,0 +1,45 @@
+body.shipping_addresses.index {
+    li.address {
+	width: 320px;
+	margin: 10px 0;
+
+	h5 {
+	    font-size: 16px;
+	    font-weight: bold;
+	    margin: 5px 0;
+	}
+
+	.detail {
+	    padding-left: 15px;
+
+	    ul {
+		height: 15px;
+		margin: 5px 0;
+
+		li {
+		    display: none;
+		    float: left;
+		    margin-right: 5px;
+		    font-size: 90%;
+		}
+	    }
+	}
+
+	.detail:hover li {
+	    display: block;
+	}
+    }
+}
+
+body.shipping_addresses.show {
+    dt {
+	font-size: 90%;
+	font-weight: bold;
+    }
+
+    dd {
+	font-family: "Palatino Linotype";
+	font-size: 120%;
+	padding: 5px;
+    }
+}

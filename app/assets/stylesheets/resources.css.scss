@@ -1,0 +1,25 @@
+// Place all the styles related to the resources controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.file_combo {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+
+    input[type=file] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+    }
+
+    img {
+	width: 375px;
+	height: 280px;
+    }
+
+    img[src=""] {
+	display: none;
+    }
+}
